@@ -8,10 +8,12 @@ int main() {
 	
 	bool flag = false;
 	cout << "\n";
-	for (int i = 0; i < data.length(); i++) {
-		if (data[i] == '1' && flag == false) continue;
-		else if (data[i] == '1' && flag == true) cout << '0';
-		else { flag = true; cout << '1'; }
+	for (char c: data) {
+		if (c == '1') if (flag) cout << '0';
+		else {
+			flag = true;
+			cout << '1';
+		}
 	}
 
 	return 0;
